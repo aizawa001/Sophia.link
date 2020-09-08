@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "Fzz-Db-Per"; */
+"Fzz-Db-Per.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Ie9-HW-PqN"; */
+"Ie9-HW-PqN.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "UIl-a0-vwT"; */
+"UIl-a0-vwT.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "hHX-cu-6Gx"; */
+"hHX-cu-6Gx.normalTitle" = "Sign up";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ixp-Wy-JyY"; */
+"ixp-Wy-JyY.text" = "Name";
+
+/* Class = "UILabel"; text = "Sophia.link"; ObjectID = "ms9-Kc-KrD"; */
+"ms9-Kc-KrD.text" = "Sophia.link";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "qRF-k3-NAd"; */
+"qRF-k3-NAd.normalTitle" = "Sign up";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "wyY-ns-lD7"; */
+"wyY-ns-lD7.text" = "Email";
