@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>286727301226-74kvrf26510oplhhau58ff99jm4omas6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.286727301226-74kvrf26510oplhhau58ff99jm4omas6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWZ6rYUXJ-OUQ2L9mt6rSw746ztfHOCgE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>286727301226</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gmail.aizawakyou778.SophiaLink</string>
+	<key>PROJECT_ID</key>
+	<string>sophia-link</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sophia-link.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:286727301226:ios:3dfdf0d04e9e3bbc608213</string>
+	<key>DATABASE_URL</key>
+	<string>https://sophia-link.firebaseio.com</string>
+</dict>
+</plist>

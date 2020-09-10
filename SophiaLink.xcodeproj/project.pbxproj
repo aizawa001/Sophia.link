@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591A7CBFA10A2C95C414963E /* Pods_SophiaLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */; };
 		B14E492E2505EA4A0018FFBE /* AddSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E492D2505EA4A0018FFBE /* AddSubjectsViewController.swift */; };
 		B14E4930250623090018FFBE /* MyAccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */; };
 		B1AD79642501D08200CFCB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD79632501D08200CFCB56 /* AppDelegate.swift */; };
@@ -18,9 +19,14 @@
 		B1AD79782501F61100CFCB56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD79772501F61100CFCB56 /* LoginViewController.swift */; };
 		B1AD797A250205FE00CFCB56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD7979250205FE00CFCB56 /* HomeViewController.swift */; };
 		B1AD799E2504DC3300CFCB56 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD799D2504DC3200CFCB56 /* SignUpViewController.swift */; };
+		B1D4A0952508BD2D00738501 /* ClassmatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */; };
+		B1D4A097250A1FEE00738501 /* MyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A096250A1FED00738501 /* MyClassCell.swift */; };
+		B1D4A099250A22CB00738501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1D4A098250A22CB00738501 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BBB757456D0FDC1DBB7284B /* Pods-SophiaLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SophiaLink.release.xcconfig"; path = "Target Support Files/Pods-SophiaLink/Pods-SophiaLink.release.xcconfig"; sourceTree = "<group>"; };
+		5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SophiaLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14E492D2505EA4A0018FFBE /* AddSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectsViewController.swift; sourceTree = "<group>"; };
 		B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountSettingViewController.swift; sourceTree = "<group>"; };
 		B1AD79602501D08200CFCB56 /* SophiaLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SophiaLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +40,10 @@
 		B1AD79772501F61100CFCB56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B1AD7979250205FE00CFCB56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B1AD799D2504DC3200CFCB56 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmatesListViewController.swift; sourceTree = "<group>"; };
+		B1D4A096250A1FED00738501 /* MyClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassCell.swift; sourceTree = "<group>"; };
+		B1D4A098250A22CB00738501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E699C8F5F0E51327DB551B58 /* Pods-SophiaLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SophiaLink.debug.xcconfig"; path = "Target Support Files/Pods-SophiaLink/Pods-SophiaLink.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591A7CBFA10A2C95C414963E /* Pods_SophiaLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380BF4799B943E662FA9D9ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E699C8F5F0E51327DB551B58 /* Pods-SophiaLink.debug.xcconfig */,
+				0BBB757456D0FDC1DBB7284B /* Pods-SophiaLink.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9302FFF3D3591D4EDA8868DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1AD79572501D08200CFCB56 = {
 			isa = PBXGroup;
 			children = (
 				B1AD79622501D08200CFCB56 /* SophiaLink */,
 				B1AD79612501D08200CFCB56 /* Products */,
+				380BF4799B943E662FA9D9ED /* Pods */,
+				9302FFF3D3591D4EDA8868DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +97,7 @@
 		B1AD79622501D08200CFCB56 /* SophiaLink */ = {
 			isa = PBXGroup;
 			children = (
+				B1D4A098250A22CB00738501 /* GoogleService-Info.plist */,
 				B1AD79632501D08200CFCB56 /* AppDelegate.swift */,
 				B1AD79652501D08200CFCB56 /* SceneDelegate.swift */,
 				B1AD79772501F61100CFCB56 /* LoginViewController.swift */,
@@ -73,8 +105,10 @@
 				B1AD799D2504DC3200CFCB56 /* SignUpViewController.swift */,
 				B14E492D2505EA4A0018FFBE /* AddSubjectsViewController.swift */,
 				B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */,
+				B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */,
 				B1AD79672501D08200CFCB56 /* ViewController.swift */,
 				B1AD79692501D08200CFCB56 /* Main.storyboard */,
+				B1D4A096250A1FED00738501 /* MyClassCell.swift */,
 				B1AD796C2501D08D00CFCB56 /* Assets.xcassets */,
 				B1AD796E2501D08D00CFCB56 /* LaunchScreen.storyboard */,
 				B1AD79712501D08D00CFCB56 /* Info.plist */,
@@ -89,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1AD79742501D08D00CFCB56 /* Build configuration list for PBXNativeTarget "SophiaLink" */;
 			buildPhases = (
+				83E720398BD03A2785FB8D2C /* [CP] Check Pods Manifest.lock */,
 				B1AD795C2501D08200CFCB56 /* Sources */,
 				B1AD795D2501D08200CFCB56 /* Frameworks */,
 				B1AD795E2501D08200CFCB56 /* Resources */,
+				6909B364E4BFD048A62312D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +177,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1AD79702501D08D00CFCB56 /* LaunchScreen.storyboard in Resources */,
+				B1D4A099250A22CB00738501 /* GoogleService-Info.plist in Resources */,
 				B1AD796D2501D08D00CFCB56 /* Assets.xcassets in Resources */,
 				B1AD796B2501D08200CFCB56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6909B364E4BFD048A62312D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SophiaLink/Pods-SophiaLink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SophiaLink/Pods-SophiaLink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SophiaLink/Pods-SophiaLink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83E720398BD03A2785FB8D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SophiaLink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B1AD795C2501D08200CFCB56 /* Sources */ = {
@@ -159,6 +238,8 @@
 				B14E492E2505EA4A0018FFBE /* AddSubjectsViewController.swift in Sources */,
 				B1AD79682501D08200CFCB56 /* ViewController.swift in Sources */,
 				B1AD79642501D08200CFCB56 /* AppDelegate.swift in Sources */,
+				B1D4A097250A1FEE00738501 /* MyClassCell.swift in Sources */,
+				B1D4A0952508BD2D00738501 /* ClassmatesListViewController.swift in Sources */,
 				B1AD79662501D08200CFCB56 /* SceneDelegate.swift in Sources */,
 				B14E4930250623090018FFBE /* MyAccountSettingViewController.swift in Sources */,
 			);
@@ -302,6 +383,7 @@
 		};
 		B1AD79752501D08D00CFCB56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E699C8F5F0E51327DB551B58 /* Pods-SophiaLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +402,7 @@
 		};
 		B1AD79762501D08D00CFCB56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BBB757456D0FDC1DBB7284B /* Pods-SophiaLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
