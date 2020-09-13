@@ -7,24 +7,46 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
-class AddSubjectsViewController: UIViewController {
+class AddSubjectsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
+    @IBOutlet weak var headingVerticalLabel: UILabel!
+    @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var timeTableCollectionView: UICollectionView!
+    
+    var docRef: DocumentReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let docRef = db.collection("collegeClassData").document("CollegeClass")
 
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 42 // 表示するセルの数
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
+        cell.backgroundColor = .gray  // セルの色
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+           layout collectionViewLayout: UICollectionViewLayout,
+           sizeForItemAt indexPath: IndexPath) -> CGSize{
+        return CGSize(width: headingLabel.frame.size.width,height: headingVerticalLabel.frame.size.height)
+    }
+    
 }

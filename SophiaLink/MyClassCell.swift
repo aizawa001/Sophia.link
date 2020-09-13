@@ -12,6 +12,8 @@ class MyClassCell: UICollectionViewCell {
     
     @IBOutlet weak var subjectLabel: UILabel!
     
-    @IBOutlet weak var teacherLabel: UILabel!
+    @IBOutlet weak var professorLabel: UILabel!
+    
+    @IBOutlet weak var roomLabel: UILabel!
 }
 
