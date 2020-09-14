@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-let db = Firestore.firestore()
+
 
 
 @UIApplicationMain

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    let db = Firestore.firestore()
     
     @IBOutlet weak var timeTableCllectionView: UICollectionView!
     
