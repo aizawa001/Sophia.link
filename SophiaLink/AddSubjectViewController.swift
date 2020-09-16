@@ -12,9 +12,9 @@ import Firebase
 import FirebaseFirestore
 
 class AddSubjectViewController: UIViewController{
-    
+
     let db = Firestore.firestore()
-    
+
     @IBOutlet weak var subjectNameTextField: UITextField!
     
     @IBOutlet weak var professorNameTextField: UITextField!

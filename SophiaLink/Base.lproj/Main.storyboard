@@ -482,7 +482,7 @@
         <!--Add subjects-->
         <scene sceneID="Ig7-Dn-MeS">
             <objects>
-                <viewController id="DGq-tE-aXK" customClass="AddSubjectsViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DGq-tE-aXK" customClass="AddSubjectViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12g-qy-Y89"/>
                         <viewControllerLayoutGuide type="bottom" id="6tb-hK-AF4"/>
