@@ -161,9 +161,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="roomLabel" destination="X3n-qV-rO8" id="9EJ-hs-Ine"/>
-                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="3fH-BB-WrQ"/>
-                                            <outlet property="teacherLabel" destination="obp-b8-qKO" id="SQF-kn-GhC"/>
+                                            <outlet property="professorLabel" destination="obp-b8-qKO" id="DpJ-BR-Wob"/>
+                                            <outlet property="roomLabel" destination="X3n-qV-rO8" id="Noi-3G-J5q"/>
+                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="skT-gR-JsN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -482,7 +482,7 @@
         <!--Add subjects-->
         <scene sceneID="Ig7-Dn-MeS">
             <objects>
-                <viewController id="DGq-tE-aXK" customClass="AddSubjectsViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DGq-tE-aXK" customClass="AddSubjectViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12g-qy-Y89"/>
                         <viewControllerLayoutGuide type="bottom" id="6tb-hK-AF4"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		591A7CBFA10A2C95C414963E /* Pods_SophiaLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */; };
+		AD90207B250FA0CC002B9095 /* CollegeClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90207A250FA0CC002B9095 /* CollegeClassData.swift */; };
 		B14E492E2505EA4A0018FFBE /* AddSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E492D2505EA4A0018FFBE /* AddSubjectsViewController.swift */; };
 		B14E4930250623090018FFBE /* MyAccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */; };
 		B166DF05250E081900826AD7 /* MySettingClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B166DF04250E081900826AD7 /* MySettingClassCell.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		0BBB757456D0FDC1DBB7284B /* Pods-SophiaLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SophiaLink.release.xcconfig"; path = "Target Support Files/Pods-SophiaLink/Pods-SophiaLink.release.xcconfig"; sourceTree = "<group>"; };
 		5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SophiaLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD90207A250FA0CC002B9095 /* CollegeClassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeClassData.swift; sourceTree = "<group>"; };
 		B14E492D2505EA4A0018FFBE /* AddSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectsViewController.swift; sourceTree = "<group>"; };
 		B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountSettingViewController.swift; sourceTree = "<group>"; };
 		B166DF04250E081900826AD7 /* MySettingClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingClassCell.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD902079250FA0AA002B9095 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD90207A250FA0CC002B9095 /* CollegeClassData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B1AD79572501D08200CFCB56 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		B1AD79622501D08200CFCB56 /* SophiaLink */ = {
 			isa = PBXGroup;
 			children = (
+				AD902079250FA0AA002B9095 /* Model */,
 				B1D4A098250A22CB00738501 /* GoogleService-Info.plist */,
 				B1AD79632501D08200CFCB56 /* AppDelegate.swift */,
 				B1AD79652501D08200CFCB56 /* SceneDelegate.swift */,
@@ -246,6 +257,7 @@
 				B1AD79682501D08200CFCB56 /* ViewController.swift in Sources */,
 				B1AD79642501D08200CFCB56 /* AppDelegate.swift in Sources */,
 				B1D4A097250A1FEE00738501 /* MyClassCell.swift in Sources */,
+				AD90207B250FA0CC002B9095 /* CollegeClassData.swift in Sources */,
 				B1D4A0952508BD2D00738501 /* ClassmatesListViewController.swift in Sources */,
 				B1AD79662501D08200CFCB56 /* SceneDelegate.swift in Sources */,
 				B14E4930250623090018FFBE /* MyAccountSettingViewController.swift in Sources */,
