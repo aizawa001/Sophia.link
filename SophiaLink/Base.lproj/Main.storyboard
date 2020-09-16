@@ -161,9 +161,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="professorLabel" destination="obp-b8-qKO" id="x4e-dG-xy8"/>
                                             <outlet property="roomLabel" destination="X3n-qV-rO8" id="9EJ-hs-Ine"/>
-                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="3fH-BB-WrQ"/>
-                                            <outlet property="teacherLabel" destination="obp-b8-qKO" id="SQF-kn-GhC"/>
+                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="2Sd-bT-qzX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJR-Lf-dhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680.8" y="1587.256371814093"/>
+            <point key="canvasLocation" x="1680.8" y="1586.3568215892055"/>
         </scene>
         <!--Classmates List View Controller-->
         <scene sceneID="0lH-l6-iEv">
@@ -778,7 +778,6 @@
                                             <outlet property="professorLabel" destination="gZh-nd-bBl" id="mmI-fA-M9d"/>
                                             <outlet property="roomLabel" destination="hbC-SI-56b" id="mhS-he-kNa"/>
                                             <outlet property="subjectLabel" destination="qKD-C9-56h" id="bEP-6v-IfX"/>
-                                            <outlet property="teacherLabel" destination="gZh-nd-bBl" id="VWh-I8-Bqa"/>
                                             <segue destination="WTg-pN-Asw" kind="show" id="9Jm-HM-ACK"/>
                                         </connections>
                                     </collectionViewCell>

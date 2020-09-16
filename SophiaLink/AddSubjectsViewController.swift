@@ -20,16 +20,6 @@ class AddSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let docRef = db.collection("collegeClassData").document("CollegeClass")
-
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
         // Do any additional setup after loading the view.
     }
     

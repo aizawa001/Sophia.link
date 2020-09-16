@@ -10,6 +10,8 @@ import UIKit
 
 class MyClassCell: UICollectionViewCell {
     
+
+    
     @IBOutlet weak var subjectLabel: UILabel!
     
     @IBOutlet weak var professorLabel: UILabel!

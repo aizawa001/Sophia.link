@@ -13,6 +13,8 @@ import FirebaseFirestore
 
 class AddSubjectViewController: UIViewController{
     
+    let db = Firestore.firestore()
+    
     @IBOutlet weak var subjectNameTextField: UITextField!
     
     @IBOutlet weak var professorNameTextField: UITextField!
@@ -22,21 +24,27 @@ class AddSubjectViewController: UIViewController{
     var docRef: DocumentReference!
     
     @IBAction func saveSubjectButton(_ sender: Any) {
+        
         guard let subjectName = subjectNameTextField.text, !subjectName.isEmpty else {return}
         guard let professorName = professorNameTextField.text, !professorName.isEmpty else {return}
         guard let classRoom = classRoomTextField.text, !classRoom.isEmpty else {return}
-        let dataToSave: [String: Any] = ["subject": subjectName, "professor": professorName, "classroom": classRoom]
-        docRef.setData(dataToSave) { (error) in
-            if let error = error {
-                print("Oh no! Got an error: \(error.localizedDescription)")
-            }else{
-                print("Data has been saved!")
+        
+        docRef = db.collection("collegeClassData").addDocument(data: [
+            "subject": subjectName,
+            "professor": professorName,
+            "classroom": classRoom
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(self.docRef!.documentID)")
             }
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        docRef = Firestore.firestore().document("collegeClassData/CollegeClass")
+        
     }
 }
