@@ -479,10 +479,10 @@
             </objects>
             <point key="canvasLocation" x="2522" y="1588"/>
         </scene>
-        <!--Add subjects-->
+        <!--Set subjects-->
         <scene sceneID="Ig7-Dn-MeS">
             <objects>
-                <viewController id="DGq-tE-aXK" customClass="AddSubjectViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DGq-tE-aXK" customClass="SetSubjectsViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12g-qy-Y89"/>
                         <viewControllerLayoutGuide type="bottom" id="6tb-hK-AF4"/>
@@ -861,7 +861,7 @@
                             <constraint firstAttribute="trailing" secondItem="h9X-t4-ADS" secondAttribute="trailing" constant="9" id="xOd-a0-4S0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add subjects" id="I0w-lX-oA4"/>
+                    <navigationItem key="navigationItem" title="Set subjects" id="I0w-lX-oA4"/>
                     <connections>
                         <outlet property="headingLabel" destination="bAp-yo-Egt" id="YBi-Ue-nDR"/>
                         <outlet property="headingVerticalLabel" destination="umF-8l-Gdv" id="AsL-1q-ca5"/>
@@ -1212,6 +1212,7 @@
                     <tabBarItem key="tabBarItem" title="home" image="baseline_home_white_18dp" id="nyj-uF-Z6q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Imq-Nb-17K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -1234,6 +1235,7 @@
                     <tabBarItem key="tabBarItem" title="add subjects" image="baseline_add_circle_white_18dp" id="vlL-QF-ECD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IcW-hI-MQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -1382,6 +1384,7 @@
                     <tabBarItem key="tabBarItem" title="my account" image="baseline_account_circle_white_18dp" id="k3d-jy-Vem"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dX4-j4-XTy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">

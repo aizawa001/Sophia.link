@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class AddSubjectsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
 
 
@@ -45,29 +45,20 @@ class AddSubjectsViewController: UIViewController, UICollectionViewDataSource, U
                 self.collegeClassData.append(newdocument)
             }
         }
+        
+        
     }
-    //        let docRef = db.collection("collegeClassData").document("CollegeClass")
-    //        docRef.getDocument { (document, error) in
-    //            if let document = document, document.exists {
-    //                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-    //                print("Document data: \(dataDescription)")
-    //            } else {
-    //                print("Document does not exist")
-    //            }
-    //        }
-    // Do any additional setup after loading the view.
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42 // 表示するセルの数
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MySettingClassCell// 表示するセルを登録(先程命名した"Cell")
         cell.backgroundColor = .gray  // セルの色
         return cell
+        
     }
-
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize{
