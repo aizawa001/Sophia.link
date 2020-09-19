@@ -10,10 +10,10 @@ import Foundation
 
 class CollegeClassData{
 
-    private var classroom:String!
-    private var professor:String!
-    private var subject:String!
-    private var documentId:String!
+     var classroom:String!
+     var professor:String!
+     var subject:String!
+     var documentId:String!
 
     init(classroom:String, professor:String, subject:String, documentId:String){
         self.classroom = classroom

@@ -140,7 +140,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3n-qV-rO8">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classroom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3n-qV-rO8">
                                                     <rect key="frame" x="1" y="41" width="44" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -161,9 +161,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="professorLabel" destination="obp-b8-qKO" id="DpJ-BR-Wob"/>
-                                            <outlet property="roomLabel" destination="X3n-qV-rO8" id="Noi-3G-J5q"/>
-                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="skT-gR-JsN"/>
+                                            <outlet property="classroomLabel" destination="X3n-qV-rO8" id="1qh-jK-6qX"/>
+                                            <outlet property="professorLabel" destination="obp-b8-qKO" id="x4e-dG-xy8"/>
+                                            <outlet property="subjectLabel" destination="Cd1-QA-6uF" id="2Sd-bT-qzX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJR-Lf-dhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680.8" y="1587.256371814093"/>
+            <point key="canvasLocation" x="1680.8" y="1586.3568215892055"/>
         </scene>
         <!--Classmates List View Controller-->
         <scene sceneID="0lH-l6-iEv">
@@ -479,10 +479,10 @@
             </objects>
             <point key="canvasLocation" x="2522" y="1588"/>
         </scene>
-        <!--Add subjects-->
+        <!--Set subjects-->
         <scene sceneID="Ig7-Dn-MeS">
             <objects>
-                <viewController id="DGq-tE-aXK" customClass="AddSubjectViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DGq-tE-aXK" customClass="SetSubjectsViewController" customModule="SophiaLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12g-qy-Y89"/>
                         <viewControllerLayoutGuide type="bottom" id="6tb-hK-AF4"/>
@@ -754,8 +754,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-SI-56b">
-                                                    <rect key="frame" x="1" y="41" width="44" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classroom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-SI-56b">
+                                                    <rect key="frame" x="1" y="41" width="50" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -775,10 +775,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="classroomLabel" destination="hbC-SI-56b" id="N5I-uT-iT5"/>
                                             <outlet property="professorLabel" destination="gZh-nd-bBl" id="mmI-fA-M9d"/>
-                                            <outlet property="roomLabel" destination="hbC-SI-56b" id="mhS-he-kNa"/>
                                             <outlet property="subjectLabel" destination="qKD-C9-56h" id="bEP-6v-IfX"/>
-                                            <outlet property="teacherLabel" destination="gZh-nd-bBl" id="VWh-I8-Bqa"/>
                                             <segue destination="WTg-pN-Asw" kind="show" id="9Jm-HM-ACK"/>
                                         </connections>
                                     </collectionViewCell>
@@ -862,7 +861,7 @@
                             <constraint firstAttribute="trailing" secondItem="h9X-t4-ADS" secondAttribute="trailing" constant="9" id="xOd-a0-4S0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add subjects" id="I0w-lX-oA4"/>
+                    <navigationItem key="navigationItem" title="Set subjects" id="I0w-lX-oA4"/>
                     <connections>
                         <outlet property="headingLabel" destination="bAp-yo-Egt" id="YBi-Ue-nDR"/>
                         <outlet property="headingVerticalLabel" destination="umF-8l-Gdv" id="AsL-1q-ca5"/>
@@ -1213,7 +1212,6 @@
                     <tabBarItem key="tabBarItem" title="home" image="baseline_home_white_18dp" id="nyj-uF-Z6q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Imq-Nb-17K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -1236,7 +1234,6 @@
                     <tabBarItem key="tabBarItem" title="add subjects" image="baseline_add_circle_white_18dp" id="vlL-QF-ECD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IcW-hI-MQ8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -1385,7 +1382,6 @@
                     <tabBarItem key="tabBarItem" title="my account" image="baseline_account_circle_white_18dp" id="k3d-jy-Vem"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dX4-j4-XTy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.7725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
