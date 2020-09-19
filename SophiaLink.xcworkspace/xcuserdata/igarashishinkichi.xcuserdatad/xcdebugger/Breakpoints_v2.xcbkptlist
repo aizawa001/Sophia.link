@@ -52,5 +52,206 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SophiaLink/MySettingClassCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MySettingClassCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E - ae35228fc417d13e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.__deallocating_deinit"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E - 656b722520ab14a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.__allocating_init(frame: __C.CGRect) -&gt; SophiaLink.MySettingClassCell"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E - f195448466f9e476"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.init(frame: __C.CGRect) -&gt; SophiaLink.MySettingClassCell"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "165">
+               </Location>
+               <Location
+                  uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E - 4e459b5845976d02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SophiaLink.MySettingClassCell&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "4F17FC54-D9E2-44A0-977D-7605D09F6C4E - 4ad3cb9601d8800e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SophiaLink.MySettingClassCell&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SophiaLink/MySettingClassCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "MySettingClassCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - 579aeff85478a865"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.classroomLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - a4e786fa847af471"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.classroomLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - fd8e32ca49b4f366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.classroomLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - de4fa5813542af6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.classroomLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - f195448466f9e476"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.init(frame: __C.CGRect) -&gt; SophiaLink.MySettingClassCell"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "462">
+               </Location>
+               <Location
+                  uuid = "CB87F1F4-05FE-4099-965C-C056FC021E3B - 4ad3cb9601d8800e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SophiaLink.MySettingClassCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SophiaLink.MySettingClassCell&gt;"
+                  moduleName = "SophiaLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igarashishinkichi/SophiaLink/SophiaLink/MySettingClassCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "367">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
