@@ -10,15 +10,14 @@ import UIKit
 
 class MySettingClassCell: UICollectionViewCell {
     
-    @IBOutlet weak var subjectLabel: UILabel!
-    @IBOutlet weak var professorLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel?
+    @IBOutlet weak var professorLabel: UILabel?
     
-    @IBOutlet weak var classroomLabel: UILabel!
-    
-    
+    @IBOutlet weak var classroomLabel: UILabel?
+
     func parseData(collegeClassData :CollegeClassData){
-        subjectLabel.text = collegeClassData.subject
-        professorLabel.text = collegeClassData.professor
-        classroomLabel.text = collegeClassData.classroom
+        subjectLabel?.text = collegeClassData.subject
+        professorLabel?.text = collegeClassData.professor
+        classroomLabel?.text = collegeClassData.classroom
     }
 }
