@@ -32,6 +32,9 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         //delegateとdatasourceを設定
         timeTableCollectionView.delegate = self
         timeTableCollectionView.dataSource = self
+        
+        //配列を初期化
+        collegeClassData = [CollegeClassData]()
 
         //ここでcollegeClassData配列に詰め込む
         db.collection("collegeClassData").getDocuments(){(snapshot, error)in
