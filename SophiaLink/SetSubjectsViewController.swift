@@ -11,50 +11,50 @@ import FirebaseFirestore
 
 class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
-
-
     @IBOutlet weak var headingVerticalLabel: UILabel!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var timeTableCollectionView: UICollectionView!
-    
-    var docRef: DocumentReference!
 
     let db = Firestore.firestore()
-    //配列を作る ＝＞まず引数の数が違うので動かないですね
+    
+    //配列を作る
     var collegeClassData = [CollegeClassData]()
-//遷移先で必要なので
+    
+    //遷移先で必要
     var collegeClass:CollegeClassData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //これがないためにエラー
+    }
+    
+    //画面が表示されるたびに表示
+    override func viewWillAppear(_ animated: Bool) {
+        //delegateとdatasourceを設定
         timeTableCollectionView.delegate = self
         timeTableCollectionView.dataSource = self
 
-        //ここでcollegeClassData配列に詰め込みました。
+        //ここでcollegeClassData配列に詰め込む
         db.collection("collegeClassData").getDocuments(){(snapshot, error)in
             //もしエラーならやめる
             if let error = error{
                 print(error)
             }
-
-            guard let snap = snapshot else { return  }
+            
+            //optional変数であるため"guard let"
+            guard let snap = snapshot else { return }
             //snapから取り出す
             for document in snap.documents{
                 let classroom = document["classroom"] as! String
                 let professor = document["professor"] as! String
                 let subject = document["subject"] as! String
                 let documentId = document.documentID
-
+                
                 let newdocument = CollegeClassData(classroom: classroom, professor: professor, subject: subject, documentId: documentId)
                 self.collegeClassData.append(newdocument)
-
             }
+            //timeTableControllerを更新
             self.timeTableCollectionView.reloadData()
         }
-
-        
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,21 +75,25 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
 
+    //segueの設定
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collegeClass = collegeClassData[indexPath.row]
         performSegue(withIdentifier: "toAddSubject", sender: nil)
 
     }
-
+    
+    //cellのサイズを設定
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize{
         return CGSize(width: headingLabel.frame.size.width,height: headingVerticalLabel.frame.size.height)
     }
 
+    //遷移前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddSubject"{
             let subView =  segue.destination as! AddSubjectViewController
+            //遷移先のcollegeClassDataにcollegeClassを代入する
             subView.collegeClassData = collegeClass
         }
     }

@@ -10,9 +10,9 @@ import UIKit
 
 class MySettingClassCell: UICollectionViewCell {
     
+    //全てオプショナル変数
     @IBOutlet weak var subjectLabel: UILabel?
     @IBOutlet weak var professorLabel: UILabel?
-    
     @IBOutlet weak var classroomLabel: UILabel?
 
     func parseData(collegeClassData :CollegeClassData){

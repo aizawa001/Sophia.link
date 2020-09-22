@@ -23,8 +23,6 @@ class AddSubjectViewController: UIViewController{
     @IBOutlet weak var professorNameTextField: UITextField!
     
     @IBOutlet weak var classRoomTextField: UITextField!
-    
-    var docRef: DocumentReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +36,8 @@ class AddSubjectViewController: UIViewController{
         guard let professorName = professorNameTextField.text, !professorName.isEmpty else {return}
         guard let classRoom = classRoomTextField.text, !classRoom.isEmpty else {return}
 
-        //戻値何も使っていないですね
-//        docRef = db.collection("collegeClassData").addDocument(data: [
+        //戻値(docRef)何も使っていないため不必要
+        //docRef = db.collection("collegeClassData").addDocument(data: [
 
         db.collection("collegeClassData").addDocument(data: [
             "subject": subjectName,
@@ -49,7 +47,7 @@ class AddSubjectViewController: UIViewController{
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
-//                print("Document added with ID: \(self.docRef!.documentID)")
+                //遷移元画面(SetSubjectsViewController)に戻る
                 self.navigationController?.popViewController(animated: true)
             }
         }
