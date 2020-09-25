@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     let db = Firestore.firestore()
     
+    
+    
     @IBOutlet weak var timeTableCllectionView: UICollectionView!
     
     @IBOutlet weak var headingLabel: UILabel!
@@ -35,6 +37,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    //segueの設定
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toClassmatesList", sender: nil)
+
+    }
+    
+    //セルサイズの設定
     func collectionView(_ collectionView: UICollectionView,
            layout collectionViewLayout: UICollectionViewLayout,
            sizeForItemAt indexPath: IndexPath) -> CGSize{

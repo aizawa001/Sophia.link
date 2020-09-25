@@ -21,7 +21,7 @@
 		B1AD79782501F61100CFCB56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD79772501F61100CFCB56 /* LoginViewController.swift */; };
 		B1AD797A250205FE00CFCB56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD7979250205FE00CFCB56 /* HomeViewController.swift */; };
 		B1AD799E2504DC3300CFCB56 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD799D2504DC3200CFCB56 /* SignUpViewController.swift */; };
-		B1D4A0952508BD2D00738501 /* ClassmatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */; };
+		B1D4A0952508BD2D00738501 /* StudentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A0942508BD2D00738501 /* StudentsListViewController.swift */; };
 		B1D4A097250A1FEE00738501 /* MyClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A096250A1FED00738501 /* MyClassCell.swift */; };
 		B1D4A099250A22CB00738501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1D4A098250A22CB00738501 /* GoogleService-Info.plist */; };
 		B1E29881250AF37E00E56EA4 /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29880250AF37E00E56EA4 /* AddSubjectViewController.swift */; };
@@ -45,7 +45,7 @@
 		B1AD79772501F61100CFCB56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B1AD7979250205FE00CFCB56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B1AD799D2504DC3200CFCB56 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmatesListViewController.swift; sourceTree = "<group>"; };
+		B1D4A0942508BD2D00738501 /* StudentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListViewController.swift; sourceTree = "<group>"; };
 		B1D4A096250A1FED00738501 /* MyClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassCell.swift; sourceTree = "<group>"; };
 		B1D4A098250A22CB00738501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1E29880250AF37E00E56EA4 /* AddSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				B14E492F250623090018FFBE /* MyAccountSettingViewController.swift */,
 				B1AD7979250205FE00CFCB56 /* HomeViewController.swift */,
 				B1D4A096250A1FED00738501 /* MyClassCell.swift */,
-				B1D4A0942508BD2D00738501 /* ClassmatesListViewController.swift */,
+				B1D4A0942508BD2D00738501 /* StudentsListViewController.swift */,
 				B14E492D2505EA4A0018FFBE /* SetSubjectsViewController.swift */,
 				B166DF04250E081900826AD7 /* MySettingClassCell.swift */,
 				B1E29880250AF37E00E56EA4 /* AddSubjectViewController.swift */,
@@ -258,7 +258,7 @@
 				B1AD79642501D08200CFCB56 /* AppDelegate.swift in Sources */,
 				B1D4A097250A1FEE00738501 /* MyClassCell.swift in Sources */,
 				AD90207B250FA0CC002B9095 /* CollegeClassData.swift in Sources */,
-				B1D4A0952508BD2D00738501 /* ClassmatesListViewController.swift in Sources */,
+				B1D4A0952508BD2D00738501 /* StudentsListViewController.swift in Sources */,
 				B1AD79662501D08200CFCB56 /* SceneDelegate.swift in Sources */,
 				B14E4930250623090018FFBE /* MyAccountSettingViewController.swift in Sources */,
 			);
