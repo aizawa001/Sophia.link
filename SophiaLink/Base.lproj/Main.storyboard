@@ -850,6 +850,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="DGq-tE-aXK" id="bN8-he-evl"/>
+                                    <outlet property="delegate" destination="DGq-tE-aXK" id="oBh-xq-tdD"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h53-2Y-4UW">
                                 <rect key="frame" x="80" y="559" width="215" height="29"/>

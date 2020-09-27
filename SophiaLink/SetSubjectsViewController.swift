@@ -50,16 +50,16 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
             //snapから取り出す
             for document in snap.documents{
                 let name = document["name"] as! String
-                let monday = document["monday"] as! String
-                let tuesday = document["tuesday"] as! String
-                let wednesday = document["wednesday"] as! String
-                let thursday = document["thursday"] as! String
-                let friday = document["friday"] as! String
-                let saturday = document["saturday"] as! String
-                let documentId = document.documentID
+                let monday = document["monday"] as! TimeSlotData
+                let tuesday = document["tuesday"] as! TimeSlotData
+                let wednesday = document["wednesday"] as! TimeSlotData
+                let thursday = document["thursday"] as! TimeSlotData
+                let friday = document["friday"] as! TimeSlotData
+                let saturday = document["saturday"] as! TimeSlotData
+                let documentId = document.documentID 
                 
-                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday)
-                self.userData.append(newUser)
+                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
+                self.userDatas.append(newUser)
             }
             //timeTableControllerを更新
             self.timeTableCollectionView.reloadData()
@@ -67,8 +67,8 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 表示するセルの数 tokuhara  ここが問題
-        return collegeClassData.count
+        // 表示するセルの数 
+        return userDatas.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
