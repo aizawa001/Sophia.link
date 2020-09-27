@@ -20,6 +20,8 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     //配列を作る
     var collegeClassData = [CollegeClassData]()
     
+    var userDatas = [UserData]()
+    
     //遷移先で必要
     var collegeClass:CollegeClassData?
 
@@ -37,7 +39,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         collegeClassData = [CollegeClassData]()
 
         //ここでcollegeClassData配列に詰め込む
-        db.collection("collegeClassData").getDocuments(){(snapshot, error)in
+        db.collection("userData").getDocuments(){(snapshot, error)in
             //もしエラーならやめる
             if let error = error{
                 print(error)
@@ -47,13 +49,17 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
             guard let snap = snapshot else { return }
             //snapから取り出す
             for document in snap.documents{
-                let classroom = document["classroom"] as! String
-                let professor = document["professor"] as! String
-                let subject = document["subject"] as! String
+                let name = document["name"] as! String
+                let monday = document["monday"] as! String
+                let tuesday = document["tuesday"] as! String
+                let wednesday = document["wednesday"] as! String
+                let thursday = document["thursday"] as! String
+                let friday = document["friday"] as! String
+                let saturday = document["saturday"] as! String
                 let documentId = document.documentID
                 
-                let newdocument = CollegeClassData(classroom: classroom, professor: professor, subject: subject, documentId: documentId)
-                self.collegeClassData.append(newdocument)
+                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday)
+                self.userData.append(newUser)
             }
             //timeTableControllerを更新
             self.timeTableCollectionView.reloadData()
@@ -69,7 +75,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         // 表示するセルを登録(先程命名した"Cell")
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MySettingClassCell{
             //parseDataを実行
-            cell.parseData(collegeClassData: collegeClassData[indexPath.row])
+            cell.parseData(userDatas: userDatas[indexPath.row])
             // セルの色
             cell.backgroundColor = .gray
             return cell
