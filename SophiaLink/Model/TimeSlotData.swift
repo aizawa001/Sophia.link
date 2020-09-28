@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import FirebaseFireStore
+import FirebaseFirestore
 
-
+//TimeSlotDataクラスを作成
 class TimeSlotData{
     var c_0: DocumentReference!
     var c_1: DocumentReference!
@@ -21,6 +21,7 @@ class TimeSlotData{
     var user_id: String!
     var documentId: String!
     
+    //イニシャライザ
     init(c_0: DocumentReference,c_1: DocumentReference,c_2: DocumentReference,c_3: DocumentReference, c_4: DocumentReference,c_5: DocumentReference,c_6: DocumentReference,user_id: String,documentId : String){
         self.c_0 = c_0
         self.c_1 = c_1
@@ -32,6 +33,8 @@ class TimeSlotData{
         self.user_id = user_id
         self.documentId = documentId
     }
+    
+    let db = Firestore.firestore()
     
     //配列を作る
     var collegeClassDatas = [CollegeClassData]()
