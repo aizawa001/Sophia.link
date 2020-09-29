@@ -59,7 +59,7 @@ class UserData {
                 let user_id = document["user_id"] as! String
                 let documentId = document.documentID
                 
-                let newTimeSlot = timeSlotDatas(c_0: c_0,c_1: c_1,c_2: c_2,c_3: c_3,c_4: c_4,c_5: c_5,c_6: c_6,user_id: user_id,documentId: documentId)
+                let newTimeSlot = TimeSlotData(c_0: c_0,c_1: c_1,c_2: c_2,c_3: c_3,c_4: c_4,c_5: c_5,c_6: c_6,user_id: user_id,documentId: documentId)
                 
                 self.timeSlotDatas.append(newTimeSlot)
             }

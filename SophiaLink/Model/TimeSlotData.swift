@@ -7,10 +7,13 @@
 //
 
 import Foundation
-import FirebaseFireStore
+import Firebase
 
 
 class TimeSlotData{
+
+    let db = Firestore.firestore()
+
     var c_0: DocumentReference!
     var c_1: DocumentReference!
     var c_2: DocumentReference!
