@@ -7,10 +7,15 @@
 //
 
 import Foundation
+
 import FirebaseFirestore
 
 //TimeSlotDataクラスを作成
 class TimeSlotData{
+
+    let db = Firestore.firestore()
+
+
     var c_0: DocumentReference!
     var c_1: DocumentReference!
     var c_2: DocumentReference!
@@ -22,19 +27,31 @@ class TimeSlotData{
     var documentId: String!
     
     //イニシャライザ
-    init(c_0: DocumentReference,c_1: DocumentReference,c_2: DocumentReference,c_3: DocumentReference, c_4: DocumentReference,c_5: DocumentReference,c_6: DocumentReference,user_id: String,documentId : String){
-        self.c_0 = c_0
-        self.c_1 = c_1
-        self.c_2 = c_2
-        self.c_3 = c_3
-        self.c_4 = c_4
-        self.c_5 = c_5
-        self.c_6 = c_6
-        self.user_id = user_id
-        self.documentId = documentId
+//    init(c_0: DocumentReference,c_1: DocumentReference,c_2: DocumentReference,c_3: DocumentReference, c_4: DocumentReference,c_5: DocumentReference,c_6: DocumentReference,user_id: String,documentId : String){
+//        self.c_0 = c_0
+//        self.c_1 = c_1
+//        self.c_2 = c_2
+//        self.c_3 = c_3
+//        self.c_4 = c_4
+//        self.c_5 = c_5
+//        self.c_6 = c_6
+//        self.user_id = user_id
+//        self.documentId = documentId
+//    }
+
+    //こうしておくと詰め込むとき、documentだけ渡せば良い
+    init(document: DocumentSnapshot){
+        c_0 = document["c-0"] as? DocumentReference
+        c_1 = document["c-0"] as? DocumentReference
+        c_2 = document["c-0"] as? DocumentReference
+        c_3 = document["c-0"] as? DocumentReference
+        c_4 = document["c-0"] as? DocumentReference
+        c_5 = document["c-0"] as? DocumentReference
+        c_6 = document["c-0"] as? DocumentReference
+        user_id = document["user_id"] as? String
+        documentId = document.documentID
+
     }
-    
-    let db = Firestore.firestore()
     
     //配列を作る
     var collegeClassDatas = [CollegeClassData]()
