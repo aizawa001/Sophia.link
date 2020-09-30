@@ -47,20 +47,22 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
             
             //optional変数であるため"guard let"
             guard let snap = snapshot else { return }
+
+            
             //snapから取り出す
-            for document in snap.documents{
-                let name = document["name"] as! String
-                let monday = document["monday"] as! TimeSlotData
-                let tuesday = document["tuesday"] as! TimeSlotData
-                let wednesday = document["wednesday"] as! TimeSlotData
-                let thursday = document["thursday"] as! TimeSlotData
-                let friday = document["friday"] as! TimeSlotData
-                let saturday = document["saturday"] as! TimeSlotData
-                let documentId = document.documentID 
-                
-                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
-                self.userDatas.append(newUser)
-            }
+//            for document in snap.documents{
+//                let name = document["name"] as! String
+//                let monday = document["monday"] as! TimeSlotData
+//                let tuesday = document["tuesday"] as! TimeSlotData
+//                let wednesday = document["wednesday"] as! TimeSlotData
+//                let thursday = document["thursday"] as! TimeSlotData
+//                let friday = document["friday"] as! TimeSlotData
+//                let saturday = document["saturday"] as! TimeSlotData
+//                let documentId = document.documentID
+//
+//                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
+//                self.userDatas.append(newUser)
+//            }
             //timeTableControllerを更新
             self.timeTableCollectionView.reloadData()
         }
