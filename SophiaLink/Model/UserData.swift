@@ -19,23 +19,14 @@ class UserData {
     var friday: TimeSlotData!
     var saturday: TimeSlotData!
     var documentId: String!
-//追加
+    
+    //DocumentSnapshot型のdocument変数
     private var document: DocumentSnapshot
-
+    
+    
     private lazy var userDataGroupDispatcher = DispatchGroup()
-    //イニシャライザ
-//    init(name: String,monday: TimeSlotData,tuesday: TimeSlotData,wednesday: TimeSlotData, thursday: TimeSlotData,friday: TimeSlotData,saturday: TimeSlotData,documentId : String){
-//        self.name = name
-//        self.monday = monday
-//        self.tuesday = tuesday
-//        self.wednesday = wednesday
-//        self.thursday = thursday
-//        self.friday = friday
-//        self.saturday = saturday
-//        self.documentId = documentId
-//    }
-//
 
+    //documentを引数にイニシャライザを作成
     init(document:DocumentSnapshot) {
         self.document = document
     }
@@ -43,43 +34,45 @@ class UserData {
 
     let db = Firestore.firestore()
     
-    //TImeSlotData型の空の配列を作る
-    var timeSlotDatas = [TimeSlotData]()
-    
-    //TimeSlotDataを取り出す
+    //TimeSlotDataを取り出す　わからない
     func getTimeSlotData(from ref: DocumentReference, completion : @escaping ((TimeSlotData?) -> Void)){
+        
+        //非同期処理実行前(enter)
         userDataGroupDispatcher.enter()
-        //引数を受けとります toku
-        //timeSlotDataコレクションをを取得し、全てのDocumentごとの情報を取得
-        ref.getDocument{(document, error)in
+        
+        //引数(document)を受けとります toku
+        //timeSlotDataコレクションを取得し、全てのDocumentごとの情報を取得
+        //db.collection("timeSlotData").whereField("user_id", isEqualTo: db.collection("userData").documentID()).
+        ref.getDocument(){(document, error) in
+            //全ての処理が完了した合図
             self.userDataGroupDispatcher.leave()
             //もしエラーならやめる
             if let error = error{
                 print(error)
             }
 
+            //document変数をアンラップし、TimeSlotDataの引数に入れtimeSlotDataを作成する。
             if let document = document{
                let timeSlotData =  TimeSlotData(document: document)
                 completion(timeSlotData)
             }else{
                 completion(nil)
             }
-
-
+            
             //optional変数であるため"guard let"
 //            guard let snap = snapshot else { return }
-            
+//
 //            //snapから取り出す
 //            for document in snap.documents{
 //                //toku TimeSlotに持っているのは c-0　なのでこれでは取り出せない
 //                //ER図を見てみましょう。設計図どおりに作る必要があります
-//                let c_0 = document["c_0"] as! DocumentReference
-//                let c_1 = document["c_1"] as! DocumentReference
-//                let c_2 = document["c_2"] as! DocumentReference
-//                let c_3 = document["c_3"] as! DocumentReference
-//                let c_4 = document["c_4"] as! DocumentReference
-//                let c_5 = document["c_5"] as! DocumentReference
-//                let c_6 = document["c_6"] as! DocumentReference
+//                let c_0 = document["c-0"] as! DocumentReference
+//                let c_1 = document["c-1"] as! DocumentReference
+//                let c_2 = document["c-2"] as! DocumentReference
+//                let c_3 = document["c-3"] as! DocumentReference
+//                let c_4 = document["c-4"] as! DocumentReference
+//                let c_5 = document["c-5"] as! DocumentReference
+//                let c_6 = document["c-6"] as! DocumentReference
 //                let user_id = document["user_id"] as! String
 //                let documentId = document.documentID
 //

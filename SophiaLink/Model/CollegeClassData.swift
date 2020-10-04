@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class CollegeClassData{
 
@@ -14,13 +15,22 @@ class CollegeClassData{
      var professor: String!
      var subject: String!
      var documentId: String!
-
-    init(classroom: String, professor: String, subject: String, documentId: String){
-        self.classroom = classroom
-        self.professor = professor
-        self.subject = subject
-        self.documentId = documentId
+    
+    //DocumentSnapshot型のdocument変数
+    private var document: DocumentSnapshot
+    
+    //イニシャライザ
+    //こうしておくと詰め込むとき、documentだけ渡せば良い
+    init(document: DocumentSnapshot){
+        self.document = document
     }
+
+//    init(classroom: String, professor: String, subject: String, documentId: String){
+//        self.classroom = classroom
+//        self.professor = professor
+//        self.subject = subject
+//        self.documentId = documentId
+//    }
 
 
 }

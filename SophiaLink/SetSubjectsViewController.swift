@@ -46,7 +46,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
             }
             
             //optional変数であるため"guard let"
-            guard let snap = snapshot else { return }
+            guard snapshot != nil else { return }
 
             
             //snapから取り出す
@@ -77,7 +77,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         // 表示するセルを登録(先程命名した"Cell")
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MySettingClassCell{
             //parseDataを実行
-            cell.parseData(userDatas: userDatas[indexPath.row])
+            //cell.parseData(userDatas: userDatas[indexPath.row])
             // セルの色
             cell.backgroundColor = .gray
             return cell
