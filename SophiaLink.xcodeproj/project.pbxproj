@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		591A7CBFA10A2C95C414963E /* Pods_SophiaLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */; };
 		AD90207B250FA0CC002B9095 /* CollegeClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90207A250FA0CC002B9095 /* CollegeClassData.swift */; };
+		ADD8067C252B2A5300DBCBF9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ADD8067B252B2A5300DBCBF9 /* .gitignore */; };
 		B147B654251DE17700F79628 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147B653251DE17700F79628 /* UserData.swift */; };
 		B147B657251DE2C700F79628 /* TimeSlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147B656251DE2C700F79628 /* TimeSlotData.swift */; };
 		B14E492E2505EA4A0018FFBE /* SetSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E492D2505EA4A0018FFBE /* SetSubjectsViewController.swift */; };
@@ -33,6 +34,7 @@
 		0BBB757456D0FDC1DBB7284B /* Pods-SophiaLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SophiaLink.release.xcconfig"; path = "Target Support Files/Pods-SophiaLink/Pods-SophiaLink.release.xcconfig"; sourceTree = "<group>"; };
 		5F386D904F854A69D5FE3EC6 /* Pods_SophiaLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SophiaLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD90207A250FA0CC002B9095 /* CollegeClassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeClassData.swift; sourceTree = "<group>"; };
+		ADD8067B252B2A5300DBCBF9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B147B653251DE17700F79628 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B147B656251DE2C700F79628 /* TimeSlotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotData.swift; sourceTree = "<group>"; };
 		B14E492D2505EA4A0018FFBE /* SetSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubjectsViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		B1AD79572501D08200CFCB56 = {
 			isa = PBXGroup;
 			children = (
+				ADD8067B252B2A5300DBCBF9 /* .gitignore */,
 				B1AD79622501D08200CFCB56 /* SophiaLink */,
 				B1AD79612501D08200CFCB56 /* Products */,
 				380BF4799B943E662FA9D9ED /* Pods */,
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD8067C252B2A5300DBCBF9 /* .gitignore in Resources */,
 				B1AD79702501D08D00CFCB56 /* LaunchScreen.storyboard in Resources */,
 				B1D4A099250A22CB00738501 /* GoogleService-Info.plist in Resources */,
 				B1AD796D2501D08D00CFCB56 /* Assets.xcassets in Resources */,
