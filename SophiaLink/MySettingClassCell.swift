@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MySettingClassCell: UICollectionViewCell {
     
@@ -15,13 +16,10 @@ class MySettingClassCell: UICollectionViewCell {
     @IBOutlet weak var professorLabel: UILabel?
     @IBOutlet weak var classroomLabel: UILabel?
 
-    //func parseData(collegeClassData :CollegeClassData){
-        //subjectLabel?.text = collegeClassData.subject
+    func parseData(collegeClassData :CollegeClassData){
+        subjectLabel?.text = collegeClassData.subject
         //professorLabel?.text = collegeClassData.professor
         //classroomLabel?.text = collegeClassData.classroom
-    //}
-    
-    func parseData(userDatas :UserData){
-        subjectLabel?.text = userDatas.name
     }
+    let user = Auth.auth().currentUser
 }

@@ -7,29 +7,81 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var userNameText: UITextField!
+    
+    @IBOutlet weak var emailText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
+    @IBOutlet weak var secondPasswordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override  func viewWillAppear(_ animated: Bool) {
+        //userがログインしているか確認
+        if Auth.auth().currentUser != nil {
+          // User is signed in.
+          // ...
+        } else {
+          // No user is signed in.
+          // ...
+        }
     }
-    */
-
+    
+    
     @IBAction func login(_ sender: Any) {
     }
     
     @IBAction func signUp(_ sender: Any) {
+        
+        //email,password,nameをそれぞれアンラップする
+        guard let email = emailText.text else {return}
+        guard let password = passwordText.text else {return}
+        guard let name = userNameText.text else {return}
+        guard let secondPassword = secondPasswordText.text else {return}
+        
+        //passwordが一致していなかった場合にアラートを表示
+        if password != secondPassword {
+            let alertController = UIAlertController(title: "Alert", message: "Confirmation password does not match", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.popoverPresentationController?.sourceView = view
+            present(alertController, animated: true, completion: nil)
+        } else {
+        
+        //新しくuserを作成する。emailとpasswordを引数に指定し、その後useridを用いてクロージャーを実行。
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let userId = authResult?.user.uid else {return}
+            
+            Firestore.firestore().collection("userData").document(userId).setData([
+                "name": name
+            ],completion:{(error) in
+                if let error = error {
+                    print(error)
+                    return
+                } else {
+                    //画面遷移
+                    self.performSegue(withIdentifier: "goHome", sender: nil)
+                }
+                
+            }
+            )
+        }
+    }
     }
 }
