@@ -26,17 +26,6 @@ class SignUpViewController: UIViewController {
         
     }
     
-    override  func viewWillAppear(_ animated: Bool) {
-        //userがログインしているか確認
-        if Auth.auth().currentUser != nil {
-          // User is signed in.
-          // ...
-        } else {
-          // No user is signed in.
-          // ...
-        }
-    }
-    
     
     @IBAction func login(_ sender: Any) {
     }

@@ -11,14 +11,16 @@ import FirebaseFirestore
 import Firebase
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
+    
     let db = Firestore.firestore()
     
     //ログイン状態の保持
     private var handle: AuthStateDidChangeListenerHandle?
-//詰め込みたい配列が必要です。
-
-
+    
+    //UserData型のuserDatas配列を作る。
+    var userDatas = [UserData]()
+    
     
     @IBOutlet weak var timeTableCllectionView: UICollectionView!
     
@@ -28,40 +30,62 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        timeTableCllectionView.delegate = self
+        timeTableCllectionView.dataSource = self
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
-        //こんなイメージです
+        //現在ログインしているユーザーを確認
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user == nil{
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginVC = storyboard.instantiateViewController(withIdentifier: "ログインさせたいページ")
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
                 self.present(loginVC, animated: true)
             } else {
-//ログイン監視する関数を呼ぶ
-//                self.setListener()
+                //ログイン監視する関数を呼ぶ
+                self.setListener()
             }
         })
-
+        
     }
-
-
-////監視する関数
-//    func setListener() {
-//必要なコレクションのスナップショットを取得
-//                .addSnapshotListener({ (snapshot, err) in
-//                    if let error = err{
-//                        print(error)
-//                    }else{
-//                        配列を削除して
-//                        配列にsnapshotでdata取得して
-//                        reloadします。
-
-
-//    }
-
+    
+    
+    //ログインを監視する関数
+    func setListener() {
+        if db.collection("userData").document().documentID == Auth.auth().currentUser?.uid {
+            
+            //必要なコレクションのスナップショットを取得
+            db.collection("userData").document().addSnapshotListener({ (snapshot, err) in
+                if let error = err{
+                    print(error)
+                }else{
+                    //配列を削除して
+                    //self.userDatas.removeAll()
+                    //配列にsnapshotでdata取得して
+                    guard let snap = snapshot else { return }
+                    for document in snap.documents {
+                        let name = document["name"] as! String
+                        let monday = document["monday"] as! TimeSlotData
+                        let tuesday = document["tuesday"] as! TimeSlotData
+                        let wednesdsay = document["wednesday"] as! TimeSlotData
+                        let thursday = document["thursday"] as! TimeSlotData
+                        let friday = document["friday"] as! TimeSlotData
+                        let saturday = document["saturday"] as! TimeSlotData
+                        let documentId = document.documentID
+                        
+                        let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
+                        
+                        self.userDatas.append(newUser)
+                    }
+                    //collectionViewをreload
+                    self.timeTableCllectionView.reloadData()
+                }
+            })
+        } else {
+            return
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42 // 表示するセルの数
     }
@@ -74,16 +98,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //segueの設定
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toClassmatesList", sender: nil)
-
+        self.performSegue(withIdentifier: "toClassmatesList", sender: nil)
+        
     }
     
     //セルサイズの設定
     func collectionView(_ collectionView: UICollectionView,
-           layout collectionViewLayout: UICollectionViewLayout,
-           sizeForItemAt indexPath: IndexPath) -> CGSize{
-        return CGSize(width: headingLabel.frame.size.width,height: headingVerticalLabel.frame.size.height)
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize{
+        return CGSize(width: self.headingLabel.frame.size.width,height: self.headingVerticalLabel.frame.size.height)
     }
 }
+
 
 
