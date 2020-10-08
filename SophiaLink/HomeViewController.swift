@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                         let saturday = document["saturday"] as! TimeSlotData
                         let documentId = document.documentID
                         
-                        let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
+                        let newUser = UserData(document: document)
                         
                         self.userDatas.append(newUser)
                     }
