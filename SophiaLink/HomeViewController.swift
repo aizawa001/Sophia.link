@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     private var handle: AuthStateDidChangeListenerHandle?
     
     //UserData型のuserDatas配列を作る。
-    var userDatas = [UserData]()
+    var userData: UserData?
     
     
     @IBOutlet weak var timeTableCllectionView: UICollectionView!
@@ -62,22 +62,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     //配列を削除して
                     //self.userDatas.removeAll()
                     //配列にsnapshotでdata取得して
-                    guard let snap = snapshot else { return }
-                    for document in snap.documents {
-                        let name = document["name"] as! String
-                        let monday = document["monday"] as! TimeSlotData
-                        let tuesday = document["tuesday"] as! TimeSlotData
-                        let wednesdsay = document["wednesday"] as! TimeSlotData
-                        let thursday = document["thursday"] as! TimeSlotData
-                        let friday = document["friday"] as! TimeSlotData
-                        let saturday = document["saturday"] as! TimeSlotData
-                        let documentId = document.documentID
-                        
-                        let newUser = UserData(document: document)
-                        
-                        self.userDatas.append(newUser)
-                    }
-                    //collectionViewをreload
+                    guard let snapshot = snapshot else { return  }
+                    self.userData = UserData(document: snapshot)
+                    self.userData.getAll()
                     self.timeTableCllectionView.reloadData()
                 }
             })
