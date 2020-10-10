@@ -16,21 +16,13 @@ class CollegeClassData{
      var subject: String!
      var documentId: String!
     
-    //DocumentSnapshot型のdocument変数
-    private var document: DocumentSnapshot
-    
     //イニシャライザ
-    //こうしておくと詰め込むとき、documentだけ渡せば良い
-    init(document: DocumentSnapshot){
-        self.document = document
+    init(classroom: String, professor: String, subject: String, documentId: String){
+        self.classroom = classroom
+        self.professor = professor
+        self.subject = subject
+        self.documentId = documentId
     }
-
-//    init(classroom: String, professor: String, subject: String, documentId: String){
-//        self.classroom = classroom
-//        self.professor = professor
-//        self.subject = subject
-//        self.documentId = documentId
-//    }
 
 
 }

@@ -7,15 +7,15 @@
 //
 
 import Foundation
-
+import Firebase
 import FirebaseFirestore
 
 //TimeSlotDataクラスを作成
 class TimeSlotData{
-
+    
     let db = Firestore.firestore()
-
-
+    
+    
     var c_0: DocumentReference!
     var c_1: DocumentReference!
     var c_2: DocumentReference!
@@ -27,61 +27,53 @@ class TimeSlotData{
     var documentId: String!
     
     //DocumentSnapshot型のdocument変数
-    private var document: DocumentSnapshot
+//    private var document: DocumentSnapshot
+//
+//    init(document:DocumentSnapshot) {
+//        self.document = document
+//    }
+
     
     //イニシャライザ
-    //こうしておくと詰め込むとき、documentだけ渡せば良い
-    init(document: DocumentSnapshot){
-        self.document = document
+    init(c_0: DocumentReference,c_1: DocumentReference,c_2: DocumentReference,c_3: DocumentReference,c_4: DocumentReference,c_5: DocumentReference,c_6: DocumentReference,user_id: String,documentId: String){
+        self.c_0 = c_0
+        self.c_1 = c_1
+        self.c_2 = c_2
+        self.c_3 = c_3
+        self.c_4 = c_4
+        self.c_5 = c_5
+        self.c_6 = c_6
+        self.user_id = user_id
+        self.documentId = documentId
     }
     
-    //配列を作る
+    //collegeClassDatas配列を作る
     var collegeClassDatas = [CollegeClassData]()
     
-    //CollegeClassDataを取り出す
-    func getCollegeClassData(from ref: DocumentReference, completion : @escaping ((CollegeClassData?) -> Void)) {
-        
-        
-        //引数(document)を受けとります toku
-        //timeSlotDataコレクションを取得し、全てのDocumentごとの情報を取得
-        ref.getDocument(){(document, error) in
-            
+    //CollegeClassDataを取り出すparseData
+    func parseData(from ref: DocumentReference) {
+        //データを取得
+        db.collection("collegeClassData").getDocuments(){(snapshot, error)in
             //もしエラーならやめる
             if let error = error{
                 print(error)
             }
-
-            //document変数をアンラップし、CollegeClassDataの引数に入れcollegeClassDataを作成する。
-            if let document = document{
-               let collegeClassData =  CollegeClassData(document: document)
-                completion(collegeClassData)
-            }else{
-                completion(nil)
-            }
             
-            
-        //データを取得
-//        db.collection("collegeClassData").getDocuments(){(snapshot, error)in
-//            //もしエラーならやめる
-//            if let error = error{
-//                print(error)
-//            }
-//
-//            //optional変数であるため"guard let"
-//            guard let snap = snapshot else { return }
-//            //snapから取り出す
-//            for document in snap.documents{
-//
-//                let subject = document["subject"] as! String
-//                let professor = document["professor"] as! String
-//                let classroom = document["classroom"] as! String
-//                let documentId = document.documentID
-//
-//                let newCollegeClass = CollegeClassData(classroom: classroom, professor: professor, subject: subject, documentId: documentId)
-//
-//                self.collegeClassDatas.append(newCollegeClass)
-//            }
+            //optional変数であるため"guard let"
+            guard let snap = snapshot else { return }
+            //snapから取り出す
+            for document in snap.documents{
+                
+                let subject = document["subject"] as! String
+                let professor = document["professor"] as! String
+                let classroom = document["classroom"] as! String
+                let documentId = document.documentID as! String
+                
+                let newCollegeClass = CollegeClassData(classroom: classroom, professor: professor, subject: subject, documentId: documentId)
+                
+                self.collegeClassDatas.append(newCollegeClass)
             }
+        }
         
     }
 }

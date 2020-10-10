@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.present(loginVC, animated: true)
             } else {
                 //ログイン監視する関数を呼ぶ
-                self.setListener()
+            //    self.setListener()
             }
         })
         
@@ -51,20 +51,34 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     //ログインを監視する関数
+
     func setListener() {
         if db.collection("userData").document().documentID == Auth.auth().currentUser?.uid {
-            
+
             //必要なコレクションのスナップショットを取得
             db.collection("userData").document().addSnapshotListener({ (snapshot, err) in
                 if let error = err{
                     print(error)
                 }else{
                     //配列を削除して
-                    //self.userDatas.removeAll()
+                    self.userDatas.removeAll()
                     //配列にsnapshotでdata取得して
-                    guard let snapshot = snapshot else { return  }
-                    self.userData = UserData(document: snapshot)
-                    self.userData.getAll()
+                    guard let snap = snapshot else { return }
+                    for document in snap.documents {
+                        let name = document["name"] as! String
+                        let monday = document["monday"] as! TimeSlotData
+                        let tuesday = document["tuesday"] as! TimeSlotData
+                        let wednesdsay = document["wednesday"] as! TimeSlotData
+                        let thursday = document["thursday"] as! TimeSlotData
+                        let friday = document["friday"] as! TimeSlotData
+                        let saturday = document["saturday"] as! TimeSlotData
+                        let documentId = document.documentID
+
+                        let newUser = UserData(document: document)
+
+                        self.userDatas.append(newUser)
+                    }
+                    //collectionViewをreload
                     self.timeTableCllectionView.reloadData()
                 }
             })
@@ -72,6 +86,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             return
         }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42 // 表示するセルの数
