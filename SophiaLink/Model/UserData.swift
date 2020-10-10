@@ -42,7 +42,6 @@ class UserData {
         
         //引数(document)を受けとります toku
         //timeSlotDataコレクションを取得し、全てのDocumentごとの情報を取得
-        //db.collection("timeSlotData").whereField("user_id", isEqualTo: db.collection("userData").documentID()).
         ref.getDocument(){(document, error) in
             //全ての処理が完了した合図
             self.userDataGroupDispatcher.leave()
@@ -52,12 +51,12 @@ class UserData {
             }
 
             //document変数をアンラップし、TimeSlotDataの引数に入れtimeSlotDataを作成する。
-            if let document = document{
-               let timeSlotData =  TimeSlotData(document: document)
-                completion(timeSlotData)
-            }else{
-                completion(nil)
-            }
+//            if let document = document{
+//               let timeSlotData =  TimeSlotData(document: document)
+//                completion(timeSlotData)
+//            }else{
+//                completion(nil)
+//            }
             
             //optional変数であるため"guard let"
 //            guard let snap = snapshot else { return }
@@ -82,6 +81,10 @@ class UserData {
                 //timeSlotDatas配列にnewTimeSlotを挿入
 //                self.timeSlotDatas.append(newTimeSlot)
 //            }
+            
         }
+    }
+    func getCollegeClass(for timeSlot: TimeSlotData) {
+//        timeSlot.getCollegeClassData(from: ref, completion: <#T##((CollegeClassData?) -> Void)##((CollegeClassData?) -> Void)##(CollegeClassData?) -> Void#>)
     }
 }
