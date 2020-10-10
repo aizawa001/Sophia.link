@@ -52,40 +52,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //ログインを監視する関数
 
-    func setListener() {
-        if db.collection("userData").document().documentID == Auth.auth().currentUser?.uid {
-
-            //必要なコレクションのスナップショットを取得
-            db.collection("userData").document().addSnapshotListener({ (snapshot, err) in
-                if let error = err{
-                    print(error)
-                }else{
-                    //配列を削除して
-                    self.userDatas.removeAll()
-                    //配列にsnapshotでdata取得して
-                    guard let snap = snapshot else { return }
-                    for document in snap.documents {
-                        let name = document["name"] as! String
-                        let monday = document["monday"] as! TimeSlotData
-                        let tuesday = document["tuesday"] as! TimeSlotData
-                        let wednesdsay = document["wednesday"] as! TimeSlotData
-                        let thursday = document["thursday"] as! TimeSlotData
-                        let friday = document["friday"] as! TimeSlotData
-                        let saturday = document["saturday"] as! TimeSlotData
-                        let documentId = document.documentID
-
-                        let newUser = UserData(document: document)
-
-                        self.userDatas.append(newUser)
-                    }
-                    //collectionViewをreload
-                    self.timeTableCllectionView.reloadData()
-                }
-            })
-        } else {
-            return
-        }
-    }
+//    func setListener() {
+//        if db.collection("userData").document().documentID == Auth.auth().currentUser?.uid {
+//
+//            //必要なコレクションのスナップショットを取得
+//            db.collection("userData").document().addSnapshotListener({ (snapshot, err) in
+//                if let error = err{
+//                    print(error)
+//                }else{
+//                    //配列を削除して
+//                    self.userDatas.removeAll()
+//                    //配列にsnapshotでdata取得して
+//                    guard let snap = snapshot else { return }
+//                    for document in snap.documents {
+//                        let name = document["name"] as! String
+//                        let monday = document["monday"] as! TimeSlotData
+//                        let tuesday = document["tuesday"] as! TimeSlotData
+//                        let wednesdsay = document["wednesday"] as! TimeSlotData
+//                        let thursday = document["thursday"] as! TimeSlotData
+//                        let friday = document["friday"] as! TimeSlotData
+//                        let saturday = document["saturday"] as! TimeSlotData
+//                        let documentId = document.documentID
+//
+//                        let newUser = UserData(document: document)
+//
+//                        self.userDatas.append(newUser)
+//                    }
+//                    //collectionViewをreload
+//                    self.timeTableCllectionView.reloadData()
+//                }
+//            })
+//        } else {
+//            return
+//        }
+//    }
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
