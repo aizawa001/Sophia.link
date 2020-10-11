@@ -21,6 +21,7 @@ class UserData {
     var saturday: TimeSlotData!
     var documentId: String!
 
+    //外部からの代入を防ぐprivate(set)
     private(set) var mondayRef: DocumentReference?
     private(set) var tuesdayRef: DocumentReference?
     private(set) var wednesdayRef: DocumentReference?
@@ -45,10 +46,9 @@ class UserData {
     func getAll(completion: @escaping (()->Void)){
         mondayRef = document["monday"] as? DocumentReference
         if let mondayRef = mondayRef{ getTimeSlotData(from: mondayRef){self.monday =  $0} }
-
-
     }
-    //TimeSlotDataを取り出す　わからない
+    
+    //TimeSlotDataを取り出す
     func getTimeSlotData(from ref: DocumentReference, completion : @escaping ((TimeSlotData?) -> Void)){
         
         //非同期処理実行前(enter)

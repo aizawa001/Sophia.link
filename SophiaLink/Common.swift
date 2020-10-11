@@ -9,3 +9,4 @@
 import Foundation
 
 let COLLEGE_CLASS_DATA = "collegeClassData"
+let TIMESLOT_DATA = "timeSlotData"

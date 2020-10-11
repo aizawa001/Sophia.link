@@ -51,14 +51,14 @@ class TimeSlotData{
     var collegeClassDatas = [CollegeClassData]()
     
     //CollegeClassDataを取り出すparseData
-    func parseData(from ref: DocumentReference) {
-        //データを取得
+    func getCollegeClassData(from ref: DocumentReference) {
+        
+        //"collegeClassData"からデータを取得
         db.collection("collegeClassData").getDocuments(){(snapshot, error)in
             //もしエラーならやめる
             if let error = error{
                 print(error)
             }
-            
             //optional変数であるため"guard let"
             guard let snap = snapshot else { return }
             //snapから取り出す
@@ -70,7 +70,7 @@ class TimeSlotData{
                 let documentId = document.documentID as! String
                 
                 let newCollegeClass = CollegeClassData(classroom: classroom, professor: professor, subject: subject, documentId: documentId)
-                
+                //配列に入れる
                 self.collegeClassDatas.append(newCollegeClass)
             }
         }

@@ -21,5 +21,12 @@ class MySettingClassCell: UICollectionViewCell {
         professorLabel?.text = collegeClassData.professor
         classroomLabel?.text = collegeClassData.classroom
     }
+    
+    func parseData(timeSlotData :TimeSlotData){
+        subjectLabel?.text = timeSlotData.c_0 as? String
+        professorLabel?.text = timeSlotData.c_1 as? String
+        classroomLabel?.text = timeSlotData.c_2 as? String
+    }
+    
     let user = Auth.auth().currentUser
 }
