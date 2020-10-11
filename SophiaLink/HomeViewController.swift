@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     private var handle: AuthStateDidChangeListenerHandle?
     
     //UserData型のuserDatas配列を作る。
-    var userDatas = [UserData]()
+    var userData: UserData?
     
     
     @IBOutlet weak var timeTableCllectionView: UICollectionView!
@@ -51,6 +51,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     //ログインを監視する関数
+
 //    func setListener() {
 //        if db.collection("userData").document().documentID == Auth.auth().currentUser?.uid {
 //
@@ -85,6 +86,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            return
 //        }
 //    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42 // 表示するセルの数

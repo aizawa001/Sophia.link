@@ -18,8 +18,8 @@ class MySettingClassCell: UICollectionViewCell {
 
     func parseData(collegeClassData :CollegeClassData){
         subjectLabel?.text = collegeClassData.subject
-        //professorLabel?.text = collegeClassData.professor
-        //classroomLabel?.text = collegeClassData.classroom
+        professorLabel?.text = collegeClassData.professor
+        classroomLabel?.text = collegeClassData.classroom
     }
     let user = Auth.auth().currentUser
 }

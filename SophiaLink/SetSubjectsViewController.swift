@@ -17,9 +17,12 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var timeTableCollectionView: UICollectionView!
     
     let db = Firestore.firestore()
-    
+
+    //tokuhara
+    private var collegeClassDataCollectionRef: CollectionReference!
+
 //    //配列を作る
-//    var collegeClassData = [CollegeClassData]()
+   var collegeClassDatas = [CollegeClassData]()
 //
 //    var userDatas = [UserData]()
     
@@ -28,66 +31,60 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //delegateとdatasourceを設定
+        timeTableCollectionView.delegate = self
+        timeTableCollectionView.dataSource = self
+
+        collegeClassDataCollectionRef = db.collection(COLLEGE_CLASS_DATA)
     }
-    
+
+    //tokuhara とりあえずCollegeClassDataを表示する方法をまず理解しましょう!
     //画面が表示されるたびに表示
-//    override func viewWillAppear(_ animated: Bool) {
-//        //delegateとdatasourceを設定
-//        timeTableCollectionView.delegate = self
-//        timeTableCollectionView.dataSource = self
-//
-//        //配列を初期化
-//        collegeClassData = [CollegeClassData]()
-//
-//        //ここでcollegeClassData配列に詰め込む
-//        db.collection("userData").getDocuments(){(snapshot, error)in
-//            //もしエラーならやめる
-//            if let error = error{
-//                print(error)
-//            }
-//
-//            //optional変数であるため"guard let"
-//            guard snapshot != nil else { return }
-//
-//
-//            //snapから取り出す
-//            //            for document in snap.documents{
-//            //                let name = document["name"] as! String
-//            //                let monday = document["monday"] as! TimeSlotData
-//            //                let tuesday = document["tuesday"] as! TimeSlotData
-//            //                let wednesday = document["wednesday"] as! TimeSlotData
-//            //                let thursday = document["thursday"] as! TimeSlotData
-//            //                let friday = document["friday"] as! TimeSlotData
-//            //                let saturday = document["saturday"] as! TimeSlotData
-//            //                let documentId = document.documentID
-//            //
-//            //                let newUser = UserData(name: name,monday: monday,tuesday: tuesday,wednesday: wednesday,thursday: thursday,friday: friday,saturday: saturday,documentId: documentId)
-//            //                self.userDatas.append(newUser)
-//            //            }
-//            //timeTableControllerを更新
-//            self.timeTableCollectionView.reloadData()
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        collegeClassDatas.removeAll()
+        //ここでcollegeClassData配列に詰め込む
+        collegeClassDataCollectionRef.getDocuments(){(snapshot, error)in
+            //もしエラーならやめる
+            if let error = error{
+                print(error)
+            }
+//            optional変数であるため"guard let"
+            guard let snap = snapshot else { return }
+            // snapから取り出す
+            for document in snap.documents{
+                let classroom = document["classroom"] as! String
+                let professor = document["professor"] as! String
+                let subject = document["subject"] as! String
+                let documentId = document.documentID
+
+
+                let newClassData = CollegeClassData(classroom: classroom,professor: professor,subject: subject, documentId: documentId)
+                self.collegeClassDatas.append(newClassData)
+            }
+//            timeTableControllerを更新
+            self.timeTableCollectionView.reloadData()
+        }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 表示するセルの数
-        //return timeSlotData.collegeClassDatas.count
+        return collegeClassDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 表示するセルを登録(先程命名した"Cell")
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MySettingClassCell{
             
-            //parseDataを実行
-            var timeSlotData = TimeSlotData(c_0: DocumentReference, c_1: DocumentReference, c_2: DocumentReference, c_3: DocumentReference, c_4: DocumentReference, c_5: DocumentReference, c_6: DocumentReference, user_id: String, documentId: String)
-            timeSlotData.parseData()
+            cell.parseData(collegeClassData: collegeClassDatas[indexPath.row])
             // セルの色
-            cell.backgroundColor = .gray
+//            cell.backgroundColor = .gray
             return cell
         }else{
             return UICollectionViewCell()
         }
+    }
+
     
     
     //segueの設定

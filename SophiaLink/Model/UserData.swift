@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import Firebase
 
 //UserDataクラスを作成
 class UserData {
@@ -19,7 +20,14 @@ class UserData {
     var friday: TimeSlotData!
     var saturday: TimeSlotData!
     var documentId: String!
-    
+
+    private(set) var mondayRef: DocumentReference?
+    private(set) var tuesdayRef: DocumentReference?
+    private(set) var wednesdayRef: DocumentReference?
+    private(set) var thursdayRef: DocumentReference?
+    private(set) var fridayRef: DocumentReference?
+    private(set) var saturdayRef: DocumentReference?
+
     //DocumentSnapshot型のdocument変数
     private var document: DocumentSnapshot
     
@@ -33,7 +41,13 @@ class UserData {
 
 
     let db = Firestore.firestore()
-    
+
+    func getAll(completion: @escaping (()->Void)){
+        mondayRef = document["monday"] as? DocumentReference
+        if let mondayRef = mondayRef{ getTimeSlotData(from: mondayRef){self.monday =  $0} }
+
+
+    }
     //TimeSlotDataを取り出す　わからない
     func getTimeSlotData(from ref: DocumentReference, completion : @escaping ((TimeSlotData?) -> Void)){
         
