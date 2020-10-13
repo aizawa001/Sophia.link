@@ -72,7 +72,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
     
     override func viewWillAppear(_ animated: Bool) {
         timeSlotDatas.removeAll()
-        timeSlotDataCollectionRef.whereField("user_id", isEqualTo: "zFMqw4hBw0KQhR0pmefi").getDocument(){(snapshot,error)in
+        timeSlotDataCollectionRef.getDocuments(){(snapshot,error)in
             if let error = error {
                 print(error)
             }
@@ -91,7 +91,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
                 let newTimeSlot = TimeSlotData(c_0: c_0, c_1: c_1, c_2: c_2, c_3: c_3, c_4: c_4, c_5: c_5, c_6: c_6, user_id: user_id, documentId: documentId)
                              
                 //timeSlotDatas配列にnewTimeSlotを挿入
-//                self.timeSlotDatas.append(newTimeSlot)
+                self.timeSlotDatas.append(newTimeSlot)
                 
             }
         }
@@ -108,7 +108,7 @@ class SetSubjectsViewController: UIViewController, UICollectionViewDataSource, U
         // 表示するセルを登録(先程命名した"Cell")
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MySettingClassCell{
             //cellを表示するparseDataを実行
-            cell.parseData(collegeClassData: collegeClassDatas[indexPath.row])
+            cell.parseData(timeSlotData: timeSlotDatas[indexPath.row])
             return cell
         }else{
             return UICollectionViewCell()
